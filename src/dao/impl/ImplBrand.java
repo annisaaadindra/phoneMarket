@@ -51,29 +51,41 @@ public class ImplBrand implements InfaceBrand {
         System.out.println("============\n**menampilkan daftar brand**");
 
         System.out.println("DAFTAR BRAND \n==============================");
-        
+
         System.out.println("ID \t Nama Brand");
 
-        while (rs.next())
-        {
+        while (rs.next()) {
             Brand brand = new Brand();
             brand.setIdMerk(rs.getInt("idMerk"));
             brand.setNama(rs.getString("nama"));
 
             listOfBrands.add(brand);
-            
+
             System.out.println(brand.getIdMerk() + " \t " + brand.getNama());
         }
 
         System.out.println("-----------------------------");
-        
+
         return listOfBrands;
     }
 
     @Override
     public int updBrand(Brand brand) throws Exception {
-        // TODO Auto-generated method stub
-        return 0;
+        brand.setNama("iPhone");
+        String sql = "update merk set nama=? where idMerk = ?";
+
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, brand.getNama());
+        pst.setInt(2, brand.getIdMerk());
+
+        int rowAffected = pst.executeUpdate();
+        if (rowAffected > 0)
+            System.out.println("Data di atas telah diperbaharui, silahkan cek kembali");
+
+        else
+            System.out.println("Ada yang salah, periksa lagi querynya");
+
+            return rowAffected;
     }
 
 }

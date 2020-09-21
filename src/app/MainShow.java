@@ -52,8 +52,8 @@ public class MainShow {
         addrDAO.findByCustAddresses(1);
         addrDAO.selectAddress(2);
 
-        // InfaceBrand brandDAO = new ImplBrand(MySQLConnection.getConnection());
-        // brandDAO.showAllBrand();
+        InfaceBrand brandDAO = new ImplBrand(MySQLConnection.getConnection());
+        brandDAO.showAllBrand();
     }
   
 }
