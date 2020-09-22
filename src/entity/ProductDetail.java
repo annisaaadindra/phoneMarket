@@ -1,19 +1,23 @@
 package entity;
 
+import java.util.Date;
+
 public class ProductDetail {
     private int idDetProduct;
     private Varian var;
     private Color color;
     private Product product;
     private int stok;
+    private int harga;
+    private Date lastUpdated;
 
     public ProductDetail() {
     }
 
-    public ProductDetail(int idDetProduct, Product product, int stok) {
-        this.idDetProduct = idDetProduct;
+    public ProductDetail(Varian var, Color color, Product product) {
+        this.var = var;
+        this.color = color;
         this.product = product;
-        this.stok = stok;
     }
 
     public int getIdDetProduct() {
@@ -55,4 +59,21 @@ public class ProductDetail {
     public void setStok(int stok) {
         this.stok = stok;
     }
+
+    public int getHarga() {
+        return harga;
+    }
+
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
 }

@@ -6,6 +6,7 @@ import dao.impl.ImplAdm;
 import dao.impl.ImplBrand;
 import dao.impl.ImplCategory;
 import dao.impl.ImplCity;
+import dao.impl.ImplColor;
 import dao.impl.ImplCustomer;
 import dao.impl.ImplKecamatan;
 import dao.impl.ImplProv;
@@ -16,6 +17,7 @@ import dao.inface.InfaceAdm;
 import dao.inface.InfaceBrand;
 import dao.inface.InfaceCategory;
 import dao.inface.InfaceCity;
+import dao.inface.InfaceColor;
 import dao.inface.InfaceCustomer;
 import dao.inface.InfaceKecamatan;
 import dao.inface.InfaceProv;
@@ -60,6 +62,9 @@ public class MainShow {
         InfaceCategory catDAO = new ImplCategory(MySQLConnection.getConnection());
         catDAO.selectOneCat(1);
         catDAO.showAllCategory();
+
+        InfaceColor colorDAO = new ImplColor(MySQLConnection.getConnection());
+        colorDAO.showAllColor();
     }
 
 }

@@ -12,8 +12,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(int idOrder, Customer cst, Address adr, Date dateOrder, int totalHarga) {
-        this.idOrder = idOrder;
+    public Order(Customer cst, Address adr, Date dateOrder, int totalHarga) {
         this.cst = cst;
         this.adr = adr;
         this.dateOrder = dateOrder;
