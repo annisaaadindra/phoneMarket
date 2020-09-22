@@ -4,6 +4,7 @@ import dao.MySQLConnection;
 import dao.impl.ImplAddress;
 import dao.impl.ImplAdm;
 import dao.impl.ImplBrand;
+import dao.impl.ImplCategory;
 import dao.impl.ImplCity;
 import dao.impl.ImplCustomer;
 import dao.impl.ImplKecamatan;
@@ -13,6 +14,7 @@ import dao.impl.ImplVarian;
 import dao.inface.InfaceAddress;
 import dao.inface.InfaceAdm;
 import dao.inface.InfaceBrand;
+import dao.inface.InfaceCategory;
 import dao.inface.InfaceCity;
 import dao.inface.InfaceCustomer;
 import dao.inface.InfaceKecamatan;
@@ -54,6 +56,10 @@ public class MainShow {
 
         InfaceBrand brandDAO = new ImplBrand(MySQLConnection.getConnection());
         brandDAO.showAllBrand();
+
+        InfaceCategory catDAO = new ImplCategory(MySQLConnection.getConnection());
+        catDAO.selectOneCat(1);
+        catDAO.showAllCategory();
     }
-  
+
 }
