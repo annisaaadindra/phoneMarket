@@ -116,7 +116,7 @@ public class ImplAddress implements InfaceAddress {
         InfaceKecamatan kecDAO = new ImplKecamatan(this.conn);
         InfaceProv provDAO = new ImplProv(this.conn);
 
-        System.out.println("===================\n**menampilkan alamat pengiriman yang dipilih**");
+        // System.out.println("===================\n**menampilkan alamat pengiriman yang dipilih**");
 
         if(rs.next())
         {
@@ -141,14 +141,14 @@ public class ImplAddress implements InfaceAddress {
             adr.setProv(prov);
         }
 
-        System.out.println("**show one full address profile**");
-        System.out.println("--------------------------");
-        System.out.println("Customer's name: " + adr.getCst().getFirstName() + adr.getCst().getLastName());
-        System.out.println("Email: " + adr.getCst().getEmail());
-        System.out.println("Receiver's contact: " + adr.getNoTelfon());
-        System.out.println("Address: "+ adr.getAddress());
-        System.out.println("City: "+ adr.getCity().getNamaKota());
-        System.out.println("Province: " + adr.getProv().getProvName());
+        // System.out.println("**show one full address profile**");
+        // System.out.println("--------------------------");
+        // System.out.println("Customer's name: " + adr.getCst().getFirstName() + adr.getCst().getLastName());
+        // System.out.println("Email: " + adr.getCst().getEmail());
+        // System.out.println("Receiver's contact: " + adr.getNoTelfon());
+        // System.out.println("Address: "+ adr.getAddress());
+        // System.out.println("City: "+ adr.getCity().getNamaKota());
+        // System.out.println("Province: " + adr.getProv().getProvName());
 
         return adr;
     }

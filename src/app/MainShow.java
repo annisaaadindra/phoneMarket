@@ -9,6 +9,7 @@ import dao.impl.ImplCity;
 import dao.impl.ImplColor;
 import dao.impl.ImplCustomer;
 import dao.impl.ImplKecamatan;
+import dao.impl.ImplOrder;
 import dao.impl.ImplProv;
 import dao.impl.ImplTag;
 import dao.impl.ImplVarian;
@@ -20,6 +21,7 @@ import dao.inface.InfaceCity;
 import dao.inface.InfaceColor;
 import dao.inface.InfaceCustomer;
 import dao.inface.InfaceKecamatan;
+import dao.inface.InfaceOrder;
 import dao.inface.InfaceProv;
 import dao.inface.InfaceTag;
 import dao.inface.InfaceVarian;
@@ -54,7 +56,6 @@ public class MainShow {
 
         InfaceAddress addrDAO = new ImplAddress(MySQLConnection.getConnection());
         addrDAO.findByCustAddresses(1);
-        addrDAO.selectAddress(2);
 
         InfaceBrand brandDAO = new ImplBrand(MySQLConnection.getConnection());
         brandDAO.showAllBrand();
@@ -65,6 +66,8 @@ public class MainShow {
 
         InfaceColor colorDAO = new ImplColor(MySQLConnection.getConnection());
         colorDAO.showAllColor();
-    }
 
+        InfaceOrder orderDAO = new ImplOrder(MySQLConnection.getConnection());
+        orderDAO.showAllOrder();
+    }
 }
