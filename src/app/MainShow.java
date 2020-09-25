@@ -69,5 +69,6 @@ public class MainShow {
 
         InfaceOrder orderDAO = new ImplOrder(MySQLConnection.getConnection());
         orderDAO.showAllOrder();
+        orderDAO.countSubtotalPrize(1);
     }
 }

@@ -94,9 +94,26 @@ public class ImplOrder implements InfaceOrder {
     }
 
     @Override
-    public int countSubtotalPrize(int idOrder) throws Exception {
-        // TODO Auto-generated method stub
-        return 0;
+    public String countSubtotalPrize(int idOrder) throws Exception {
+        String subTotalOrder = null;
+        String sql = "SELECT SUM(harga) as subtotalharga, detailorder.idOrder FROM detailproduk JOIN detailorder ON detailproduk.idDetailProduk = detailorder.idDetailProduk WHERE idOrder = ?";
+        
+        PreparedStatement pst = this.conn.prepareStatement(sql);
+        pst.setInt(1, idOrder);
+        ResultSet rs = pst.executeQuery();
+
+        System.out.println("===================\n**menampilkan subtotal order**");
+        System.out.println("=======================================");
+        System.out.println("ID Order: " + idOrder);
+
+        if(rs.next())
+        {
+            subTotalOrder = rs.getString("subtotalharga");
+
+            System.out.println("Subtotal Harga: " + subTotalOrder);
+        }
+
+        return subTotalOrder;
     }
 
     @Override
